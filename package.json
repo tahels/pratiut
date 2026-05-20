@@ -1,0 +1,51 @@
+{
+  "name": "pratiut",
+  "version": "0.1.0",
+  "private": true,
+  "description": "אתר פרטיות - ייעוץ בנושאי הגנת פרטיות, GDPR ותיקון 13 לחוק הגנת הפרטיות",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,mdx,css,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.0.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
+    "@radix-ui/react-navigation-menu": "^1.2.3",
+    "@radix-ui/react-accordion": "^1.2.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "motion": "^11.15.0",
+    "next-themes": "^0.4.4",
+    "zod": "^3.24.1",
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Design Tokens - יוחלפו ע"י צבעי המותג הסופיים
+   ============================================
+   Placeholder palette: Deep Petrol + Warm Gold
+   צבעים זמניים — להחלפה לאחר קבלת מיתוג סופי
+*/
+
+@layer base {
+  :root {
+    /* Base surfaces */
+    --background: 40 33% 97%;        /* קרם חמים */
+    --foreground: 210 40% 12%;       /* פחם כהה */
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 12%;
+
+    /* Primary — Deep Petrol */
+    --primary: 198 60% 18%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Secondary — neutral warm */
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 210 40% 18%;
+
+    /* Muted */
+    --muted: 40 15% 94%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent — Warm Gold */
+    --accent: 38 55% 50%;
+    --accent-foreground: 210 40% 12%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 198 60% 30%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 210 35% 12%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 210 35% 12%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 38 55% 60%;
+    --primary-foreground: 210 40% 8%;
+
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 210 30% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 38 55% 55%;
+    --accent-foreground: 210 40% 8%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 210 30% 22%;
+    --input: 210 30% 22%;
+    --ring: 38 55% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1, "kern" 1;
+  }
+
+  /* כותרות בפונט תצוגה */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* טקסט רגיל - איזון שורות */
+  p {
+    text-wrap: pretty;
+  }
+
+  /* בחירת טקסט */
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+
+  /* Scrollbar custom */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  /* RTL helpers - כשצריך התאמה ספציפית */
+  .ltr {
+    direction: ltr;
+  }
+
+  /* טקסט מודגש בעדינות */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* מסגרת gradient עדינה */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(
+      hsl(var(--background)),
+      hsl(var(--background))
+    ) padding-box,
+    linear-gradient(135deg,
+      hsl(var(--accent)),
+      hsl(var(--primary))
+    ) border-box;
+    border: 1px solid transparent;
+  }
+
+  /* רקע נקודות עדין */
+  .bg-dots {
+    background-image: radial-gradient(
+      circle,
+      hsl(var(--muted-foreground) / 0.15) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+}
